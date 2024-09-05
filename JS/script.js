@@ -5,23 +5,73 @@ const { createApp } = Vue
 createApp({
     data: () => ({
         toDoList: [
-            { toDo: 'Do my laundry' },
-            { toDo: 'Cancel milk delivery' },
-            { toDo: 'Clean fridge' },
-            { toDo: 'Check passport' },
-            { toDo: 'Do web check-in' },
-            { toDo: 'Download a movie for the flight' },
-            { toDo: 'Recharge mobile' },
-            { toDo: 'Pack swimsuit' },
-            { toDo: 'go biking' },
-            { toDo: 'Laundry' },
-            { toDo: 'cat litter box' },
-            { toDo: 'dishes' },
-            { toDo: 'stretch' },
-            { toDo: 'meditate' },
+            {
+                toDo: 'Do my laundry',
+                done: false,
+            },
+            {
+                toDo: 'Cancel milk delivery',
+                done: true,
+            },
+            {
+                toDo: 'Clean fridge',
+                done: false,
+            },
+            {
+                toDo: 'Check passport',
+                done: true,
+            },
+            {
+                toDo: 'Do web check-in',
+                done: false,
+            },
+            {
+                toDo: 'Download a movie for the flight',
+                done: false,
+            },
+            {
+                toDo: 'Recharge mobile',
+                done: true,
+            },
+            {
+                toDo: 'Pack swimsuit',
+                done: false,
+            },
+            {
+                toDo: 'go biking',
+                done: true,
+            },
+            {
+                toDo: 'Laundry',
+                done: true,
+            },
+            {
+                toDo: 'cat litter box',
+                done: false,
+            },
+            {
+                toDo: 'dishes',
+                done: true,
+            },
+            {
+                toDo: 'stretch',
+                done: true,
+            },
+            {
+                toDo: 'meditate',
+                done: true,
+            },
         ],
+        doneClasses: '',
+
+
 
     }),
-
-
+    methods: {
+        isDone(done) {
+            if (done === true) {
+                return this.doneClasses = "text-decoration-line-through"
+            }
+        },
+    }
 }).mount('#app')
