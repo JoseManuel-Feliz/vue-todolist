@@ -21,11 +21,19 @@
         crossorigin='anonymous'></script>
     <!-- SCRIPT JS -->
     <script defer src="./JS/script.js"></script>
-
 </head>
 
 <body>
+    <div id="app">
 
+        <header></header>
+        <main>
+            <ul>
+                <li v-for="things in toDoList">{{things.toDo}}</li>
+            </ul>
+        </main>
+        <footer></footer>
+    </div>
 </body>
 
 </html>
