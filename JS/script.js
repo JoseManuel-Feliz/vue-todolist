@@ -4,6 +4,7 @@ const { createApp } = Vue
 
 createApp({
     data: () => ({
+        addTask: '',
         toDoList: [
             {
                 toDo: 'Do my laundry',
@@ -74,7 +75,7 @@ createApp({
             }
         },
 
-        removeActivity(index) {
+        removeTask(index) {
             this.toDoList.splice(index, 1);
         },
 

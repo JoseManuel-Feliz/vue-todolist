@@ -31,9 +31,15 @@
             <ul>
                 <li v-for="(things, index) in toDoList" :class="isDone(things.done)">
                     {{things.toDo}}
-                    <i class="fa-regular fa-circle-xmark" style="color: #dd0e0e;" @click="removeActivity(index)"></i>
+                    <i class="fa-regular fa-circle-xmark" style="color: #dd0e0e;" @click="removeTask(index)"></i>
                 </li>
             </ul>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask">
+                <label for="floatingInput">Add New task</label>
+            </div>
+            <p>{{addTask}}</p>
+            <button type="button" class="btn btn-primary btn-lg">Large button</button>
         </main>
         <footer></footer>
 
