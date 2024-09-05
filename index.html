@@ -25,7 +25,6 @@
 
 <body>
     <div id="app">
-
         <header></header>
         <main>
             <ul>
@@ -35,7 +34,8 @@
                 </li>
             </ul>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask">
+                <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask"
+                    @keyup.enter="addNewTask(addTask)">
                 <label for="floatingInput">Add New task</label>
             </div>
             <button type="button" class="btn btn-primary btn-lg" @click="addNewTask(addTask)">Large button</button>
