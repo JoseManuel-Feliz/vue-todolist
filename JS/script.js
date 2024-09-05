@@ -79,7 +79,10 @@ createApp({
             this.toDoList.splice(index, 1);
         },
         addNewTask(element) {
-            this.toDoList.push({ toDo: element, done: false })
+            if (element.length > 5) {
+                this.toDoList.push({ toDo: element, done: false })
+
+            }
         },
 
 
