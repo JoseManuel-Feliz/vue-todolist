@@ -38,8 +38,7 @@
                 <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask">
                 <label for="floatingInput">Add New task</label>
             </div>
-            <p>{{addTask}}</p>
-            <button type="button" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" class="btn btn-primary btn-lg" @click="addNewTask(addTask)">Large button</button>
         </main>
         <footer></footer>
 
