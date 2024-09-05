@@ -29,7 +29,10 @@
         <header></header>
         <main>
             <ul>
-                <li v-for="things in toDoList" :class="isDone(things.done)">{{things.toDo}}</li>
+                <li v-for="(things, index) in toDoList" :class="isDone(things.done)">
+                    {{things.toDo}}
+                    <i class="fa-regular fa-circle-xmark" style="color: #dd0e0e;" @click="removeActivity(index)"></i>
+                </li>
             </ul>
         </main>
         <footer></footer>
