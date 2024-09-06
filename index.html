@@ -47,8 +47,7 @@
                         @click="things.done = !things.done">
                         <p class="fs-5">{{things.toDo}}</p>
                         <span class="icon">
-                            <i class="fa-regular fa-circle-xmark fs-5" style="color: #dd0e0e;"
-                                @click="removeTask(index)"></i>
+                            <i class="fa-regular fa-circle-xmark fs-5" @click="removeTask(index)"></i>
                         </span>
                     </li>
                 </ul>
