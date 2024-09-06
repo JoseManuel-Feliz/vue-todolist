@@ -25,22 +25,56 @@
 
 <body>
     <div id="app">
-        <header></header>
-        <main>
-            <ul>
-                <li v-for="(things, index) in toDoList" :class="isDone(things.done)"
-                    @click="things.done = !things.done">
-                    {{things.toDo}}
-                    <i class="fa-regular fa-circle-xmark" style="color: #dd0e0e;" @click="removeTask(index)"></i>
-                </li>
-            </ul>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask"
-                    @keyup.enter="addNewTask(addTask)">
-                <label for="floatingInput">Add New task</label>
+        <!-- heading -->
+        <header class="d-flex align-items-center">
+            <!-- Logo -->
+            <div class="logo-wrapper">
+                <img class="logo img-fluid" src="img/logo.png" alt="Toboolist icon">
             </div>
-            <button type="button" class="btn btn-primary btn-lg" @click="addNewTask(addTask)">Large button</button>
+            <h1 class="">Toboolist</h1>
+        </header>
+
+        <main class="mt-4  container">
+            <section class="today-tasks row row-cols-1">
+
+                <div class="wrapper col">
+                    <h3 class="mb-4">Today Task</h3>
+                </div>
+
+                <ul class="list-group col row">
+                    <li class="list-group-item list-group-item-action col d-flex justify-content-between align-items-center"
+                        v-for="(things, index) in toDoList" :class="isDone(things.done)"
+                        @click="things.done = !things.done">
+                        <p class="fs-5">{{things.toDo}}</p>
+                        <span class="icon">
+                            <i class="fa-regular fa-circle-xmark fs-5" style="color: #dd0e0e;"
+                                @click="removeTask(index)"></i>
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="new-task col row row-cols-1">
+
+                <div class="wrapper col">
+                    <h3 class="mt-4">New Task</h3>
+                </div>
+
+                <div class="wrapper col d-flex ">
+                    <div class="form-floating mb-3 w-75">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="" v-model="addTask"
+                            @keyup.enter="addNewTask(addTask)">
+                        <label for="floatingInput">Add New task</label>
+                    </div>
+
+                    <span class="w-25 text-end">
+                        <button type="button" class="btn btn-primary btn-lg" @click="addNewTask(addTask)">Add
+                            New Task</button>
+                    </span>
+                </div>
+            </section>
         </main>
+
         <footer></footer>
 
 
